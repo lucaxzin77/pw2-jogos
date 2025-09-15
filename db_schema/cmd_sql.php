@@ -6,30 +6,21 @@ $criarDB = 'CREATE DATABASE IF NOT EXISTS '.DB_NAME.';';
 $usarDB = 'USE '.DB_NAME.';';
 
 $crearTabela = "
-    CREATE TABLE IF NOT EXISTS Tarefas (
+    CREATE TABLE IF NOT EXISTS jogo (
         id INT AUTO_INCREMENT PRIMARY KEY,
         titulo VARCHAR(255) NOT NULL,
-        descricao TEXT,
-        inicio DATE,
-        fim DATE,
-        `status` ENUM('pendente', 'em andamento', 'concluida') DEFAULT 'pendente',
-        createAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        data_lanc DATE DEFAULT CURRENT_DATE,
+        genero VARCHAR(100),
+        dev VARCHAR(150),
+        data_cad TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 ";
 
 $insertDados = "
-    INSERT INTO Tarefas (titulo, descricao, inicio, fim, `status`) VALUES
-    ('Comprar mantimentos', 'Comprar frutas, vegetais e pão', '2024-06-01', '2024-06-01', 'pendente'),
-    ('Reunião com equipe', 'Discutir o progresso do projeto', '2024-06-02', '2024-06-02', 'em andamento'),
-    ('Enviar relatório', 'Enviar o relatório mensal para o gerente', '2024-06-03', '2024-06-03', 'concluida'),
-    ('Limpar a casa', 'Fazer uma limpeza geral na casa', '2024-06-04', '2024-06-04', 'pendente'),
-    ('Exercício físico', 'Ir à academia para um treino de 1 hora', '2024-06-05', '2024-06-05', 'em andamento'),
-    ('Ler um livro', 'Ler pelo menos 50 páginas do livro atual', '2024-06-06', '2024-06-06', 'concluida'),
-    ('Planejar viagem', 'Pesquisar destinos e fazer reservas', '2024-06-07', '2024-06-07', 'pendente'),
-    ('Atualizar software', 'Instalar as últimas atualizações do sistema', '2024-06-08', '2024-06-08', 'em andamento'),
-    ('Visitar amigos', 'Marcar um encontro com amigos para jantar', '2024-06-09', '2024-06-09', 'concluida'),
-    ('Organizar documentos', 'Arquivar documentos importantes e descartar o que não é necessário', '2024-06-10', '2024-06-10', 'pendente');
+    INSERT INTO jogo (titulo, data_lanc, genero, dev) VALUES
+    ('Red Dead Redemption II','26-10-2018','Mundo Aberto','Rockstar Games'),
+    ('Grand Theft Auto - San Andreas','26-10-2004','Mundo Aberto','Rockstar Games'),
+    ('Hollow Knight - Silksong','04-09-2025','Metroidvania','Team Cherry')
 ";
 
 try {
