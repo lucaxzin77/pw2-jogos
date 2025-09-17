@@ -1,6 +1,7 @@
 <title>Listar jogos</title>
     </style>
     <div class="container">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <h1>Listar jogos</h1>
         <form action="" method="post" class="search-form">
             <input type="search" name="buscar" id="buscar" value="<?php echo htmlspecialchars($_POST['buscar'] ?? ''); ?>" placeholder="Buscar jogo...">
@@ -34,7 +35,7 @@
                 echo "<td>" . htmlspecialchars($item['genero']) . "</td>";
                 echo "<td>" . htmlspecialchars($item['dev']) . "</td>";
                 echo "<td>" . htmlspecialchars($item['data_cad']) . "</td>";
-                echo "<td><a href='?page=editar&id=" . $item['id'] . "'>Editar</a> | <a href='?page=deletar&id=" . $item['id'] . "' onclick=\"return confirm('Tem certeza que deseja deletar esta jogo?');\">Deletar</a></td>";
+                echo "<td><a href='?page=editar&id=" . $item['id'] . "'><i class='fa-solid fa-pen-to-square'></i></a> | <a href='?page=deletar&id=" . $item['id'] . "' onclick=\"return confirm('Tem certeza que deseja deletar esta jogo?');\"><i class='fa-solid fa-trash'></i></a></td>";
                 echo "</tr>";
             }
             ?>
